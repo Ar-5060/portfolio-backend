@@ -24,9 +24,9 @@ public class CorsConfig {
 
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "https://portfolio-frontend-p3311s9-ar-054a.vercel.app",
-                                "http://localhost:5173"
-                        )
+        "https://portfolio-frontend-ar-054a.vercel.app",
+        "http://localhost:5173"
+)
                         .allowedMethods(
                                 "GET",
                                 "POST",
