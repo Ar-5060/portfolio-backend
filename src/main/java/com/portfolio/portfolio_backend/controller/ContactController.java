@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/contact")
 @CrossOrigin(
-        origins = "https://portfolio-frontend-five-gray.vercel.app"
+        origins = {
+                "https://portfolio-frontend-p3311s9-ar-054a.vercel.app",
+                "http://localhost:5173"
+        }
 )
 public class ContactController {
 
@@ -26,13 +29,11 @@ public class ContactController {
     }
 
 
-
     @PostMapping
     public Message sendMessage(@RequestBody Message message) {
 
         return messageRepository.save(message);
 
     }
-
 
 }
