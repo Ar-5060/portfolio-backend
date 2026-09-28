@@ -4,18 +4,15 @@ package com.portfolio.portfolio_backend.controller;
 import com.portfolio.portfolio_backend.entity.Message;
 import com.portfolio.portfolio_backend.repository.MessageRepository;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 
 @RestController
 @RequestMapping("/api/contact")
-@CrossOrigin(
-        origins = {
-                "https://portfolio-frontend-p3311s9-ar-054a.vercel.app",
-                "http://localhost:5173"
-        }
-)
 public class ContactController {
 
 
@@ -35,5 +32,6 @@ public class ContactController {
         return messageRepository.save(message);
 
     }
+
 
 }
