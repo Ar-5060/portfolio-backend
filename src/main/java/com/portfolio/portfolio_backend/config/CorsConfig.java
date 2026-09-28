@@ -1,10 +1,12 @@
 package com.portfolio.portfolio_backend.config;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
 
 import java.util.List;
 
@@ -16,9 +18,11 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
 
-        CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(
+        CorsConfiguration config = new CorsConfiguration();
+
+
+        config.setAllowedOrigins(
                 List.of(
                         "https://portfolio-frontend-five-gray.vercel.app",
                         "http://localhost:5173"
@@ -26,7 +30,7 @@ public class CorsConfig {
         );
 
 
-        configuration.setAllowedMethods(
+        config.setAllowedMethods(
                 List.of(
                         "GET",
                         "POST",
@@ -37,12 +41,9 @@ public class CorsConfig {
         );
 
 
-        configuration.setAllowedHeaders(
+        config.setAllowedHeaders(
                 List.of("*")
         );
-
-
-        configuration.setAllowCredentials(true);
 
 
         UrlBasedCorsConfigurationSource source =
@@ -51,11 +52,12 @@ public class CorsConfig {
 
         source.registerCorsConfiguration(
                 "/**",
-                configuration
+                config
         );
 
 
         return source;
+
     }
 
 }
